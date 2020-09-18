@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Ask user if overwriting is okay
-echo "Warning: this script will overwrite the files .zshrc .vimrc and the folder .vim in your home directory!"
+echo "Warning: this script will overwrite the files .zshrc .vimrc in your home directory!"
 read -p "Do you wish to process? [Y/n] "
 
 if [[ ! $REPLY =~ ^[Yy]$ ]]
@@ -10,10 +10,9 @@ then
 fi
 
 # Create symlinks
-rm -rf ~/.vim ~/.zshrc ~/.vimrc
+rm ~/.zshrc ~/.vimrc
 ln -s ~/Dotfiles/.vimrc ~/.vimrc
 ln -s ~/Dotfiles/.zshrc ~/.zshrc
-ln -s ~/Dotfiles/.vim ~/.vim
 echo "Symlinks created"
 
 # Check if oh my zsh (plugin manager for zsh) is installed
