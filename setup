@@ -46,6 +46,8 @@ rm ~/.zshrc ~/.vimrc
 ln -s ~/Dotfiles/.vimrc ~/.vimrc
 ln -s ~/Dotfiles/.zshrc ~/.zshrc
 echo "Symlinks created"
-
+echo "Remember to:"
+echo " * Run ":PlugInstall" the first time when using vim"
+echo " * source ~/.zshrc"
 echo "Done."
 

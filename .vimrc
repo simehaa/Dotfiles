@@ -6,7 +6,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
-Plug 'ycm-core/YouCompleteMe'
+"Plug 'ycm-core/YouCompleteMe'
 Plug 'Yggdroot/indentLine'
 Plug 'psf/black', { 'tag': '19.10b0' }
 call plug#end()
