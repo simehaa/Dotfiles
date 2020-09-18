@@ -1,0 +1,15 @@
+#!/bin/bash
+ln -s ~/Dotfiles/.vimrc ~/.vimrc
+ln -s ~/Dotfiles/.zshrc ~/.zshrc
+
+# Check if oh my zsh (plugin manager for zsh) is installed
+if [[ -f ~/.oh-my-zsh ]]
+then
+    echo "Attempting to install the plugin manager oh-my-zsh..."
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+else
+    echo "oh my zsh already installed!"
+fi
+
