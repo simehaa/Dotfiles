@@ -1,15 +1,30 @@
 #!/bin/bash
+
+# Ask user if overwriting is okay
+echo "Warning: this script will overwrite the files .zshrc .vimrc and the folder .vim in your home directory!"
+read -p "Do you wish to process? [Y/n] "
+
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then 
+    exit 1
+fi
+
+# Create symlinks
+rm -rf ~/.vim ~/.zshrc ~/.vimrc
 ln -s ~/Dotfiles/.vimrc ~/.vimrc
 ln -s ~/Dotfiles/.zshrc ~/.zshrc
+ln -s ~/Dotfiles/.vim ~/.vim
+echo "Symlinks created"
 
 # Check if oh my zsh (plugin manager for zsh) is installed
-if [[ -f ~/.oh-my-zsh ]]
+if [[ -d  ~/.oh-my-zsh ]]
 then
+    echo "oh my zsh already installed!"
+else 
     echo "Attempting to install the plugin manager oh-my-zsh..."
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-else
-    echo "oh my zsh already installed!"
 fi
 
+echo "Done."
