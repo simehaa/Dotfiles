@@ -9,12 +9,6 @@ then
     exit 1
 fi
 
-# Create symlinks
-rm ~/.zshrc ~/.vimrc
-ln -s ~/Dotfiles/.vimrc ~/.vimrc
-ln -s ~/Dotfiles/.zshrc ~/.zshrc
-echo "Symlinks created"
-
 # Check if zsh is installed
 if [[ ! $(which zsh) ]]
 then 
@@ -31,5 +25,11 @@ else
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
+
+# Create symlinks
+rm ~/.zshrc ~/.vimrc
+ln -s ~/Dotfiles/.vimrc ~/.vimrc
+ln -s ~/Dotfiles/.zshrc ~/.zshrc
+echo "Symlinks created"
 
 echo "Done."
