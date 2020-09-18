@@ -15,6 +15,12 @@ ln -s ~/Dotfiles/.vimrc ~/.vimrc
 ln -s ~/Dotfiles/.zshrc ~/.zshrc
 echo "Symlinks created"
 
+# Check if zsh is installed
+if [[ ! $(which zsh) ]]
+then 
+    echo "zsh is not installed. Install it, and run this script again"
+fi
+
 # Check if oh my zsh (plugin manager for zsh) is installed
 if [[ -d  ~/.oh-my-zsh ]]
 then
