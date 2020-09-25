@@ -13,11 +13,12 @@ else
         if [[ $REPLY =~ ^[Yy]$ ]]
         then 
             rm ~/.zshrc
-            ln -s .zshrc ~/.zshrc
+            ln -s ~/Dotfiles/.zshrc ~/.zshrc
+	    source ~/.zshrc
         fi
     else
-        rm ~/.zshrc
-        ls -s .zshrc ~/.zshrc
+	rm ~/.zshrc
+        ln -s ~/Dotfiles/.zshrc ~/.zshrc
         source ~/.zshrc
     fi
 
@@ -66,11 +67,11 @@ else
         if [[ $REPLY =~ ^[Yy]$ ]]
         then 
             rm ~/.vimrc
-            ln -s .vimrc ~/.vimrc
+            ln -s ~/Dotfiles/.vimrc ~/.vimrc
         fi
     else
-        rm ~/.vimrc
-        ls -s .vimrc ~/.vimrc
+	rm ~/.vimrc
+        ln -s ~/Dotfiles/.vimrc ~/.vimrc
     fi
 
     # Check if vim-plug is already installed
