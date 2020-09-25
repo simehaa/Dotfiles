@@ -1,29 +1,23 @@
-" Plugins
+" To install plugins run :PlugInstall
+
 call plug#begin()
-Plug 'sheerun/vim-polyglot'
-Plug 'patstockwell/vim-monokai-tasty'
-Plug 'vim-airline/vim-airline'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'airblade/vim-gitgutter'
-Plug 'Yggdroot/indentLine'
+Plug 'sheerun/vim-polyglot' "indentation
+Plug 'patstockwell/vim-monokai-tasty' "theme
+Plug 'vim-airline/vim-airline' "nice statusline at the bottom
+Plug 'preservim/nerdtree' "filemanager
+Plug 'Yggdroot/indentLine' "duh
 call plug#end()
 
-" Themes
+set number
+syntax on
 colorscheme vim-monokai-tasty
 let g:airline_theme='monokai_tasty'
 let g:python_highlight_all = 1
-
-" Other Settings
-set number
-syntax on
 set hlsearch
 set encoding=utf-8
 autocmd VimEnter * wincmd p
 set expandtab ts=4 sw=4 ai
 set timeoutlen=1000 ttimeoutlen=0
-highlight ColorColumn ctermbg=black
-set colorcolumn=80
 nmap <F6> :NERDTreeToggle<CR>
 command! What echo synIDattr(synID(line('.'),col('.'), 1), 'name')
 noremap <Left>  <NOP>
