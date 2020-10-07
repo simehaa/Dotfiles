@@ -6,8 +6,8 @@ Plug 'patstockwell/vim-monokai-tasty' "theme
 Plug 'vim-airline/vim-airline' "nice statusline at the bottom
 Plug 'preservim/nerdtree' "filemanager
 Plug 'Yggdroot/indentLine' "duh
-Plug 'tpope/vim-surround' " s operator for surrounding, e.g. dsp delete surrouning parentheses
-Plug 'tpope/vim-commentary' 
+Plug 'tpope/vim-surround' " cs operator for surrounding, e.g. dsp delete surrouning parentheses
+Plug 'tpope/vim-commentary' " gc operator
 call plug#end()
 
 set number

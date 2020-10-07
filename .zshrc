@@ -8,7 +8,7 @@ export ZSH="/home/simen/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -105,3 +105,11 @@ if [ -f '/home/simen/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/s
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/simen/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/simen/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+# Arch linux: lock fn keys for Logitech k780
+# sudo vim /etc/udev/hwdb.d/95-k780.hwdb          
+# sudo systemd-hwdb update && sudo udevadm trigger
+# https://gist.github.com/andrejcremoznik/e56234138305226abd41fe4d1d2561a3
+export LS_COLORS="$(vivid generate molokai)"
+export MOZ_ENABLE_WAYLAND=1
