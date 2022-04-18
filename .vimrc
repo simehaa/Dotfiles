@@ -1,28 +1,13 @@
-" To install plugins run :PlugInstall
-
-call plug#begin()
-Plug 'sheerun/vim-polyglot' "indentation
-Plug 'patstockwell/vim-monokai-tasty' "theme
-Plug 'vim-airline/vim-airline' "nice statusline at the bottom
-Plug 'preservim/nerdtree' "filemanager
-Plug 'Yggdroot/indentLine' "duh
-Plug 'tpope/vim-surround' " cs operator for surrounding, e.g. dsp delete surrouning parentheses
+call plug#begin() " run :PlugInstall (requires vim-plug)
+Plug 'sheerun/vim-polyglot' " language packs
+Plug 'preservim/nerdtree' " file manager
+Plug 'vim-airline/vim-airline' " refined status line
+Plug 'tpope/vim-surround' " cs operator for surrounding Ex. dsp = delete surrouning parentheses
 Plug 'tpope/vim-commentary' " gc operator
 call plug#end()
 
-set number
 syntax on
-colorscheme vim-monokai-tasty
-let g:airline_theme='monokai_tasty'
-let g:python_highlight_all = 1
+set number
 set hlsearch
-set encoding=utf-8
-autocmd VimEnter * wincmd p
-set expandtab ts=4 sw=4 ai
-set timeoutlen=1000 ttimeoutlen=0
+set expandtab
 nmap <F6> :NERDTreeToggle<CR>
-command! What echo synIDattr(synID(line('.'),col('.'), 1), 'name')
-noremap <Left>  <NOP>
-noremap <Right> <NOP>
-noremap <Up>    <NOP>
-noremap <Down>  <NOP>
